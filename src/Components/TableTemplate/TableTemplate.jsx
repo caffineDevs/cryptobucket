@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
 import Pagination from "react-bootstrap/Pagination";
-
+import { Link } from "react-router-dom";
 import "./TableTemplate.scss";
 
 import invertedTriangle from "../../assets/icons/inverted-triangle.svg";
@@ -96,9 +96,11 @@ function TableTemplate() {
                       src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${coin.id}.png`}
                       style={{ height: "40px" }}
                     />
-                    <span className="ml-3 font-weight-semi-bold">
-                      {coin.name}
-                    </span>
+                    <Link to="/currencies/12">
+                      <span className="ml-3 font-weight-semi-bold">
+                        {coin.name}
+                      </span>
+                    </Link>
                   </td>
                   <td className="font-weight-semi-bold">
                     ${roundNumbers(coin.quotes[2].price)}
